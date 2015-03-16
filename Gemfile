@@ -5,6 +5,10 @@ gem 'faraday', '~> 0.8.6'
 gem 'faraday_middleware', '~> 0.8.6'
 gem 'icalendar'
 
+gem 'dalli'
+gem 'connection_pool'
+gem 'kgio'
+
 gem 'puma'
 
 group :development, :test do

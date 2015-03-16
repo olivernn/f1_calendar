@@ -43,8 +43,10 @@ GEM
       columnize (= 0.9.0)
       rb-readline (= 0.5.2)
     columnize (0.9.0)
+    connection_pool (2.1.2)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    dalli (2.7.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     faraday (0.8.9)
@@ -57,6 +59,7 @@ GEM
     i18n (0.7.0)
     icalendar (2.2.2)
     json (1.8.2)
+    kgio (2.9.3)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -141,9 +144,12 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  connection_pool
+  dalli
   faraday (~> 0.8.6)
   faraday_middleware (~> 0.8.6)
   icalendar
+  kgio
   puma
   rails (= 4.2.1.rc4)
   rspec-rails
