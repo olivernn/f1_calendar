@@ -2,6 +2,7 @@ require 'vcr'
 require 'webmock/rspec'
 
 require 'support/calendar_event_matcher'
+require 'support/mapper_matcher'
 
 VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true

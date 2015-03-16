@@ -23,31 +23,15 @@ describe RaceMapper do
       }
     end
 
-    let(:mapped) { RaceMapper.new(data).to_h }
-
-    it "has a name" do
-      expect(mapped[:name]).to eq("My Race")
-    end
-
-    it "has a id" do
-      expect(mapped[:id]).to eq("2015/1")
-    end
-
-    it "has a number" do
-      expect(mapped[:number]).to eq(1)
-    end
-
-    it "has a starts_at" do
-      datetime = DateTime.new(2015, 3, 15, 5, 0, 0).utc
-      expect(mapped[:starts_at]).to eq(datetime)
-    end
-
-    it "has a season" do
-      expect(mapped[:season]).to eq("2015")
-    end
-
-    it "has a url" do
-      expect(mapped[:url]).to eq(URI("http://example.com"))
+    it "provides mapped attributes" do
+      expect(RaceMapper.new(data)).to provide_attributes(
+        name: "My Race",
+        id: "2015/1",
+        number: 1,
+        starts_at: DateTime.new(2015, 3, 15, 5, 0, 0).utc,
+        season: "2015",
+        url: URI("http://example.com")
+      )
     end
   end
 end
