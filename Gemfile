@@ -10,7 +10,10 @@ gem 'puma'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'webmock'
   gem 'vcr'
+end
+
+group :test do
+  gem 'webmock'
 end
 

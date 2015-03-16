@@ -11,7 +11,7 @@ module Icalendar
         @lng = params.fetch(:lng)
       end
 
-      def to_ical(*asdf)
+      def to_ical(*_)
         ";VALUE=URI;X-APPLE-RADIUS=144;X-TITLE=#{title}:geo:#{lat},#{lng}"
       end
     end
