@@ -14,7 +14,7 @@ describe Race do
 
       it "fetches race attributes" do
         VCR.use_cassette("all_races") do
-          expect(race.id).to eq("2015/1")
+          expect(race.id).to eq("F1/2015/1")
           expect(race.number).to eq(1)
           expect(race.season).to eq("2015")
         end

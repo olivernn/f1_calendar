@@ -8,7 +8,7 @@ class RaceMapper < BaseMapper
   private
 
   def id
-    "#{season}/#{number}"
+    "F1/#{season}/#{number}"
   end
 
   def number

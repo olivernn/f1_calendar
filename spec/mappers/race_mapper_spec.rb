@@ -26,7 +26,7 @@ describe RaceMapper do
     it "provides mapped attributes" do
       expect(RaceMapper.new(data)).to provide_attributes(
         name: "My Race",
-        id: "2015/1",
+        id: "F1/2015/1",
         number: 1,
         starts_at: DateTime.new(2015, 3, 15, 5, 0, 0).utc,
         season: "2015",

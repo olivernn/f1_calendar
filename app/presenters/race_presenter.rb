@@ -17,6 +17,7 @@ class RacePresenter
       event.dtend = dtend
       event.uid = uid
       event.summary = summary
+      event.description = description
       event.x_apple_structured_location = location
 
       event.alarm do |a|
@@ -62,5 +63,9 @@ class RacePresenter
 
   def summary
     race.name
+  end
+
+  def description
+    fail NotImplementedError
   end
 end

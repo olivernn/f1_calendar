@@ -41,9 +41,8 @@ class Race
       .season_and_round(season, number)
       .lazy
       .map(&GridPositionMapper)
-      .map do |attrs|
-        GridPosition.new(attrs)
-      end
+      .map { |attrs| GridPosition.new(attrs) }
+      .sort
   end
 
   def results
@@ -53,9 +52,8 @@ class Race
       .season_and_round(season, number)
       .lazy
       .map(&ResultMapper)
-      .map do |attrs|
-        Result.new(attrs)
-      end
+      .map { |attrs| Result.new(attrs) }
+      .sort
   end
 
   private

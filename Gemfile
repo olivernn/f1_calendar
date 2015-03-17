@@ -19,5 +19,6 @@ end
 
 group :test do
   gem 'webmock'
+  gem 'timecop'
 end
 
