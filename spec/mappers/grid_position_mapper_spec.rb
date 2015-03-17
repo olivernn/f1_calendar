@@ -1,4 +1,4 @@
-describe ResultMapper do
+describe GridPositionMapper do
   let(:data) do
     {
       "number"=>"44",
