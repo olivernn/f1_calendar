@@ -24,6 +24,6 @@ def log(message, start, finish)
   ]
   log = "    #{log.compact.join("\t")}"
 
-  Rails.logger.debug(log)
+  Rails.logger.info(log)
 end
 
