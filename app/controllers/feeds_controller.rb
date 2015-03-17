@@ -15,7 +15,4 @@ class FeedsController < ApplicationController
     Race.all
   end
 
-  def text_calendar
-    Mime::Type["text/calendar"]
-  end
 end
