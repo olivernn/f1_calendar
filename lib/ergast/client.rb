@@ -2,6 +2,7 @@ require 'ergast/client/json_response'
 require 'ergast/client/error_handler'
 require 'ergast/client/wrap_response'
 require 'ergast/client/instrument'
+require 'ergast/client/cache'
 
 module Ergast
   module Client
@@ -20,6 +21,7 @@ module Ergast
 
     Faraday.register_middleware :request, {
       instrument: -> { Ergast::Client::Instrument },
+      cache: -> { Ergast::Client::Cache },
     }
 
     def get(path, query = {})
@@ -49,6 +51,7 @@ module Ergast
 
     def connection
       @connection ||= Faraday.new(url: HOST) do |faraday|
+        faraday.request :cache
         faraday.request :instrument
         faraday.response :wrap_response
         faraday.response :json_response

@@ -6,6 +6,15 @@ ActiveSupport::Notifications.subscribe "ergast.response" do |name, start, finish
   log("Ergast Response: #{payload[:status]}", start, finish)
 end
 
+ActiveSupport::Notifications.subscribe "cache_write.active_support" do |name, start, finish, id, payload|
+  log("Cache WRITE to #{payload[:key]}", start, finish)
+end
+
+ActiveSupport::Notifications.subscribe "cache_read.active_support" do |name, start, finish, id, payload|
+  type = payload[:hit] ? "HIT" : "MISS"
+  log("Cache #{type} on #{payload[:key]}", start, finish)
+end
+
 def log(message, start, finish)
   duration = finish - start
 
