@@ -12,7 +12,7 @@ class FeedsController < ApplicationController
   end
 
   def races
-    Race.all
+    Race.all(season: Time.now.year)
   end
 
 end
